@@ -1,0 +1,351 @@
+/* Body Section */
+body {
+    background-color: #595174;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    color: #565656;
+}
+
+/* Main Container */
+#main {
+    width: 50%;
+    height: auto;
+    background: white;
+    margin: auto;
+    margin-top: 27px;
+    border-radius: 9px;
+    box-shadow: 0px 12px 16px 0px rgba(0,0,0,0.24), 0px 17px 50px 0px rgba(0,0,0,0.19);
+}
+
+
+/* Heading of the Web page*/
+#app-heading {
+    text-align: center;
+    font-family: serif;
+    font-size: 2.8rem;
+    color: #0a0ee8;
+    margin: 10px;
+    margin-top: 8px;
+}
+
+/*** Form to Create Task ***/
+/* Task Decription in the form */
+#description-container {
+    width: auto;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+#description-container p, #due-date-container p, #category-container p {
+    display: inline;
+    font-size: 0.9rem;
+    font-family: Cambria, 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+#description-container p {
+    padding-left: 2px;
+    padding-bottom: 5px;
+}
+
+#form-description {
+    width: 75%;
+    border: 0;
+    background-color: transparent;
+    margin-top: 1px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-family: Cambria, 'Times New Roman', serif;
+}
+
+/* Category and Date container of the form */
+.category-date-container {
+    display: flex;
+}
+
+#category-heading {
+    padding-bottom: 5px;
+}
+
+#choose-category {
+    font-weight: bold;
+}
+
+/* Dropdown Menu:- */
+select {
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 0.6;
+    font-family: Cambria, 'Times New Roman', serif;
+    cursor: pointer;
+}
+
+#date-input-box {
+    width: 75%;
+    border: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 0.6;
+    font-family: Cambria, 'Times New Roman', serif;
+    cursor: pointer;
+}
+
+#category-container {
+    border-right: 1px solid #d7d7d7;
+    width: 50%;
+    padding: 10px;
+}
+
+#due-date-container {
+    width: 50%;
+    padding-left: 10px;
+    padding: 10px;
+}
+
+/*** Buttons Container ***/
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.247);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+/* Add task Button */
+.add-button{
+    background-color: #464646;
+    color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 14px;
+    margin-right: 25px;
+}
+
+/* Delete tasks Button */
+.delete-button{
+    background-color: #ed3824;
+    color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.1em;
+    margin-right: 3px;
+}
+
+/* Button's Hover Properties in the Web page*/
+.add-button:hover {
+    background: #101010e6;
+    box-shadow: 0px 7px 8px 2px rgb(0 0 0 / 24%), 0px -2px 9px 3px rgb(0 0 0 / 22%);
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #890f00f0;
+    box-shadow: 0px 7px 8px 2px rgb(0 0 0 / 24%), 0px -2px 9px 3px rgb(0 0 0 / 22%);
+    cursor: pointer;
+}
+
+/**** TODO List ****/
+/* THIS IS CHANGE COLOR EVEN NUMBERED OF TAKS LIST */
+#task:nth-child(2n) {
+    background: #fbfbfb;
+}
+
+/* THIS IS CHANGE COLOR ODD NUMBERED OF TAKS LIST */
+#task:nth-child(2n+1) {
+    background: #f7f7f7;
+}
+
+/* Various Hover mouse effects  */
+#task:hover, #category-container:hover, #due-date-container:hover, #description-container:hover {
+    background-color: #e1e1e1;
+}
+
+/* Div containing All Tasks in the Database  */ 
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*** Flex box of each tasks ***/
+#task {
+    flex: 0 0 50px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+/* CATEGORY BOX of Each Task List */
+.task-category {
+    color: aliceblue;
+    height: 18px;
+    width: 70px;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;    
+    font-family: Baskerville, sans-serif;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.24), 0px 17px 50px 0px rgba(0,0,0,0.19);
+}
+#personal{
+    background-color: #0a0ee8;
+}
+#school{
+    background-color: brown;
+}
+#work{
+    background-color: aqua;
+}
+#cleaning{
+    background-color: green;
+}
+#other{
+    background-color: red;
+}
+
+/* Task Description in TODO list */
+#task-description {
+    color: #565656;
+    font-size: 1.1rem;
+}
+
+/* Task Due Date in TODO list */
+#task-date {
+    color: rgb(64 67 79);
+    font-size: 0.9rem;
+}
+
+/* Checkbox */
+#check-box {
+    outline: 3px solid #525251;
+    color: blueviolet;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/*** Form to Filter Each Tasks ***/
+/* Filter Container*/
+#filter{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+    padding: 7px;
+}
+
+#filter button{
+    border: 2px solid rgb(0, 0, 255);
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
+    border-radius: 4px;
+}
+
+/* Hover effect in filter button */
+#filter button:hover{
+    background: #ececf4;
+    box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 24%), 0px -2px 3px 0px rgb(0 0 0 / 22%);
+    cursor: pointer;
+}
+
+/* Time Container*/
+#time{
+    font-size: 0.9rem;
+    color: #0a0ee8;
+    margin-right: 11rem;
+    
+}
+
+#time i,span{
+    color: #0479ff;
+}
+
+
+/*** Adding Responsiveness in the Web page ***/
+@media only screen and (max-width:1100px){
+    #app-heading{
+        font-size: 2rem;
+    }
+    #check-box{
+        outline: 2px solid #525251;
+    }
+    #filter{
+        font-size: 0.9rem;
+        padding: 7px;
+    }
+    #filter button{
+        font-size: 0.7rem;
+        margin-left: 0.1rem;
+    }
+    .buttons-container{
+        padding: 15px;
+    }
+    .task-category{
+        padding: 7px;
+    }
+    #time{
+        font-size: 0.8rem;
+        margin-right: 4.8rem;
+    }
+
+}
+
+@media only screen and (max-width:800px){
+    .add-button{
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .delete-button{
+        font-size: 0.9rem;
+    }
+    #check-box{
+        outline: 1px solid #525251;
+    }
+    #task-description{
+        font-size: 0.9rem;
+    }
+    #task-date{
+        font-size: 0.8rem;
+    }
+    #time{
+        font-size: 0.8rem;
+        margin-right: 3rem;
+    }
+
+}
+
+@media only screen and (max-width:700px){
+    #main{
+        width: 65%;
+    }
+    .task-category{
+        height: 15px;
+        width: 3.8rem;
+        font-size: 0.7rem;
+    }
+    #time{
+        font-size: 0.7rem;
+        margin-right: 2.6rem;
+    }
+}
+
+@media only screen and (max-width:500px){
+    #main{
+        width: 85%;
+        margin-top: 1.5rem;
+    }
+}
+

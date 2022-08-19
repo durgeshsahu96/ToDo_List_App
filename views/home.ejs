@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Adding responsiveness in the website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the Page -->
+    <title><%= title %></title>
+    <!--Using external CSS stylesheet in the website-->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--Using Font Awesome script for using icons in the website-->
+	<script src="https://kit.fontawesome.com/33f8ef031e.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- Body Section -->
+<body>
+    <!-- Main Div Container -->
+    <div id="main">
+        <br>
+        <!--Heading -->
+        <h1 id="app-heading">TODO App</h1>
+        <!-- Form to take input task from user -->
+        <form action="/create" method="POST">
+            <!--Description Container of the form -->
+            <div id="description-container">
+                <p>DESCRIPTION</p><br>
+                <input id="form-description" type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+            <!-- Category and Due Date Container of the form -->
+            <div class="category-date-container">
+                <!-- Category Container -->
+                <div id="category-container">
+                    <p id="category-heading">CATEGORY</p><br>
+                    <!-- Category Drop-down Menu -->
+                    <select name="category">
+                        <option id="choose-category" value="category1" selected disabled>Choose a category</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <!-- Due Date Container -->
+                <div id="due-date-container">
+                    <p>DUE DATE</p><br>
+                    <input id="date-input-box" type="date" name="date" placeholder="" required>
+                </div>
+            </div>
+            <!-- Add & Delete Button Container of the form -->
+            <div class="buttons-container">
+                <!-- Add Task Button -->
+                <div> 
+                    <button type="submit" class="add-button">
+                        <i class="fa fa-plus" aria-hidden="true"></i> 
+                        &nbsp; ADD TASK
+                    </button>
+                </div>
+                &nbsp;
+                <!-- Delete Tasks Button -->
+                <div>
+                    <button type="submit" class="delete-button" form="delete1">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        &nbsp; DELETE TASKS
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+    <!-- Filter Container -->
+    <div id="filter">
+        <!-- Form to take filter value -->
+        <form action="/" method="POST">
+            <input type="radio" name="category" value="all" checked />
+            <label for="all">All</label>
+            <input type="radio" name="category" value="personal" />
+            <label for="personal">Personal</label>
+            <input type="radio" name="category" value="work" />
+            <label for="work">Work</label>
+            <input type="radio" name="category" value="school" />
+            <label for="school">School</label>
+            <input type="radio" name="category" value="cleaning" />
+            <label for="cleaning">Cleaning</label>
+            <input type="radio" name="category" value="other" />
+            <label for="other">Other</label>
+            <button type="submit">FILTER</button>
+        </form>
+    </div>
+        <!-- Div containing all the tasks present in the Database -->
+        <div class="show">
+            <!-- Form to delete task(s) from the Database -->
+            <form id="delete1" action="/delete" method="POST" >
+                <!-- Fetching data from the Database -->
+                <% for( let i=todo_list.length-1;i>=0;i-- ){ %>
+                    <div id="task">
+                        <!-- Check Box, Description and Category Information of the Task Show here  -->
+                        <input type="checkbox" id="check-box" name=task value="<%= todo_list[i]._id %>">
+                        <!-- Each Task of the todo list -->
+                        <div class="task-container">
+                            <span id="task-description">
+                                <%= todo_list[i].description %>
+                            </span>
+                            <br>
+                            <span id="task-date">
+                                <i class="far fa-calendar-alt"></i>
+                                &nbsp;
+                               <%=todo_list[i].date.getDate()%>/<%=todo_list[i].date.getMonth()+1%>/<%=todo_list[i].date.getFullYear()%>
+                            </span>
+                            <br>
+                            <span id="time">
+                                <i class="far fa-clock"></i>
+                                <% if(Math.ceil((todo_list[i].date.getTime()-todo_list[i].date1.getTime())/(1000*60*60*24))>=0) {%>
+                                    <span>TIME REMAINING <b>:-</b></span>
+                                <%=Math.ceil((todo_list[i].date.getTime()-todo_list[i].date1.getTime())/(1000*60*60*24))%>
+                                days left
+                                <%}else{%>
+                                    <span>TIME REMAINING <b>:-</b></span> TIME'S UP!
+                                <%}%>
+                            </span>
+                        </div>
+                        <div class="task-category" id="<%=todo_list[i].category%>"> 
+                            <%= todo_list[i].category %>
+                        </div>
+                    </div>
+                <%}%>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
