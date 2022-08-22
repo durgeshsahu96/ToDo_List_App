@@ -1,5 +1,5 @@
 # ToDo_List_App
-It is a simple "ToDo_List_App" made using MongoDB, ExpressJS and NodeJS.
+It is a simple "ToDo List App" made using MongoDB, ExpressJS and NodeJS.
 
 ## Features
 - It is used for adding task according to their category.
